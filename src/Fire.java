@@ -62,11 +62,23 @@ public class Fire {
         queue.add(start);
 
         while (!queue.isEmpty()) {
-            Location current = queue.remove();
+            int size = queue.size();
+            burnTime++;
+    
+        for (int i = 0; i < size; i++) {
+                Location current = queue.remove();
+    
+        for (Location next : possibleFireSpread(forest, current)) {
             
-            if (visited.contains(current)) continue;
-            visited.add(current);
+            if (visited.add(next)) {
+                queue.add(next);
+            }
         }
+    }
+}
+
+
+
 
         // HINT: when adding to your BFS queue, you can include more information than
         // just a location. What other information might be useful?
