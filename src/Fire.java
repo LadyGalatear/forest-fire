@@ -57,6 +57,10 @@ public class Fire {
         int burnTime = 0;
         boolean[][] visited = new boolean[forest.length][forest[0].length];
 
+        Queue<int[]> queue = new ArrayDeque<>();
+        queue.add(new int[] { matchR, matchC, 0 });
+        visited[matchR][matchC] = true;
+
         // HINT: when adding to your BFS queue, you can include more information than
         // just a location. What other information might be useful?
 
@@ -73,4 +77,4 @@ public class Fire {
 
         return 0;
     }
-} 
+}
