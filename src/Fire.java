@@ -1,5 +1,9 @@
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
@@ -58,21 +62,14 @@ public class Fire {
         Set<Location> visited = new HashSet<>();
         Queue<Location> queue = new ArrayDeque<>();
         queue.add(start);
-    
-        int[][] directions = {
-            
-            {-1, 0}, // up
-             {1, 0}, // Down 
-             {0, -1}, //Left 
-             {0, 1}  // Right 
-        };
+
         while (!queue.isEmpty()) {
             Location current = queue.remove();
             
             if (visited.contains(current)) continue;
             visited.add(current);
         }
-        
+
         // HINT: when adding to your BFS queue, you can include more information than
         // just a location. What other information might be useful?
 
@@ -83,6 +80,27 @@ public class Fire {
     }
 
     public static List<Location> possibleFireSpread(char[][] forest, Location current) {
+        int[][] directions = new int[][] {
+            {-1, 0}, // up
+            {1, 0}, // Down 
+            {0, -1}, //Left 
+            {0, 1}  // Right 
+        };
+
+        List<Location> spread = new ArrayList<>();
+
+        for (int[] direction : directions) {
+            Location possibleSpread = new Location(current.row() + direction[0], 
+                current.column() + direction[1]);
+            if (possibleSpread.row() >= 0 && possibleSpread.row() < forest.length && 
+                possibleSpread.column() >= 0 && possibleSpread.column() < forest[0].length &&
+                forest[possibleSpread.row()][possibleSpread.column()] == 't') {
+                    spread.add(possibleSpread);
+            }
+
+        }
+
+        return spread;
 
     }
 
