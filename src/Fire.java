@@ -54,12 +54,10 @@ public class Fire {
             return burnTime;
         }
 
-        boolean[][] visited = new boolean[forest.length][forest[0].length];
-
-        Queue<int[]> queue = new ArrayDeque<>();
-        queue.add(new int[] { matchR, matchC, 0 });
-        visited[matchR][matchC] = true;
-
+        Location start = new Location(matchR, matchC);
+        Set<Location> visited = new HashSet<>();
+        Queue<Location> queue = new ArrayDeque<>();
+        queue.add(start);
     
         int[][] directions = {
             
@@ -69,20 +67,22 @@ public class Fire {
              {0, 1}  // Right 
         };
         while (!queue.isEmpty()) {
-            int[] current = queue.remove();
-            int row = current[0];
-            int col = current[1];
-            int time = current[2];
-            burnTime = time;
-
-       
-
+            Location current = queue.remove();
+            
+            if (visited.contains(current)) continue;
+            visited.add(current);
+        }
+        
         // HINT: when adding to your BFS queue, you can include more information than
         // just a location. What other information might be useful?
 
         // Implement this AND add more tests!!!
 
         return burnTime;
+
+    }
+
+    public static List<Location> possibleFireSpread(char[][] forest, Location current) {
 
     }
 
