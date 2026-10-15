@@ -1,3 +1,8 @@
+import java.util.ArrayDeque;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.Set;
+
 public class Fire {
     /**
      * Returns how long it takes for all vulnerable trees to be set on fire if a
@@ -38,9 +43,13 @@ public class Fire {
     public static int timeToBurn(char[][] forest, int matchR, int matchC) {
         
         if (burnTime == 0) {
-            return 0;
+            return burnTime;
+        } else {
+
         }
+
         
+
         // HINT: when adding to your BFS queue, you can include more information than
         // just a location. What other information might be useful?
 
@@ -49,7 +58,7 @@ public class Fire {
     
 
      
-       
+       return burnTime;
 
     }
 
