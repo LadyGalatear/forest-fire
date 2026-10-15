@@ -45,4 +45,10 @@ public class Fire {
        
 
     }
+
+    public static int matchInTreeLocation(char[][] forest, int matchR, int matchC) {
+        if (forest[matchR][matchC] == 't') {
+            
+        }
+    }
 }
