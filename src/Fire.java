@@ -40,6 +40,9 @@ public class Fire {
         // just a location. What other information might be useful?
 
         // Implement this AND add more tests!!!
-        return -1;
+
+     
+       
+
     }
 }
