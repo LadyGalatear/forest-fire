@@ -64,21 +64,20 @@ public class Fire {
         while (!queue.isEmpty()) {
             int size = queue.size();
             burnTime++;
-    
-        for (int i = 0; i < size; i++) {
+
+            for (int i = 0; i < size; i++) {
                 Location current = queue.remove();
-    
-        for (Location next : possibleFireSpread(forest, current)) {
-            
-            if (visited.add(next)) {
-                queue.add(next);
+
+                for (Location next : possibleFireSpread(forest, current)) {
+
+                    // Add each tree once
+
+                    if (visited.add(next)) {
+                        queue.add(next);
+                    }
+                }
             }
         }
-    }
-}
-
-
-
 
         // HINT: when adding to your BFS queue, you can include more information than
         // just a location. What other information might be useful?
@@ -91,21 +90,21 @@ public class Fire {
 
     public static List<Location> possibleFireSpread(char[][] forest, Location current) {
         int[][] directions = new int[][] {
-            {-1, 0}, // up
-            {1, 0}, // Down 
-            {0, -1}, //Left 
-            {0, 1}  // Right 
+                { -1, 0 }, // up
+                { 1, 0 }, // Down
+                { 0, -1 }, // Left
+                { 0, 1 } // Right
         };
 
         List<Location> spread = new ArrayList<>();
 
         for (int[] direction : directions) {
-            Location possibleSpread = new Location(current.row() + direction[0], 
-                current.column() + direction[1]);
-            if (possibleSpread.row() >= 0 && possibleSpread.row() < forest.length && 
-                possibleSpread.column() >= 0 && possibleSpread.column() < forest[0].length &&
-                forest[possibleSpread.row()][possibleSpread.column()] == 't') {
-                    spread.add(possibleSpread);
+            Location possibleSpread = new Location(current.row() + direction[0],
+                    current.column() + direction[1]);
+            if (possibleSpread.row() >= 0 && possibleSpread.row() < forest.length &&
+                    possibleSpread.column() >= 0 && possibleSpread.column() < forest[0].length &&
+                    forest[possibleSpread.row()][possibleSpread.column()] == 't') {
+                spread.add(possibleSpread);
             }
 
         }
