@@ -36,6 +36,12 @@ public class Fire {
      * @return the time at which the final tree to be incinerated starts burning
      */
     public static int timeToBurn(char[][] forest, int matchR, int matchC) {
+        int burnTime = matchInTreeLocation(forest, matchR, matchC);
+
+        if (burnTime == 0) {
+            return 0;
+        }
+        
         // HINT: when adding to your BFS queue, you can include more information than
         // just a location. What other information might be useful?
 
@@ -45,7 +51,9 @@ public class Fire {
 
     public static int matchInTreeLocation(char[][] forest, int matchR, int matchC) {
         if (forest[matchR][matchC] == 't') {
-            
+            return 1;
         }
+        
+        return 0;
     }
 }
