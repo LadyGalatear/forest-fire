@@ -36,8 +36,7 @@ public class Fire {
      * @return the time at which the final tree to be incinerated starts burning
      */
     public static int timeToBurn(char[][] forest, int matchR, int matchC) {
-        int burnTime = matchInTreeLocation(forest, matchR, matchC);
-
+        
         if (burnTime == 0) {
             return 0;
         }
