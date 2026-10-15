@@ -60,6 +60,23 @@ public class Fire {
         queue.add(new int[] { matchR, matchC, 0 });
         visited[matchR][matchC] = true;
 
+    
+        int[][] directions = {
+            
+            {-1, 0}, // up
+             {1, 0}, // Down 
+             {0, -1}, //Left 
+             {0, 1}  // Right 
+        };
+        while (!queue.isEmpty()) {
+            int[] current = queue.remove();
+            int row = current[0];
+            int col = current[1];
+            int time = current[2];
+            burnTime = time;
+
+       
+
         // HINT: when adding to your BFS queue, you can include more information than
         // just a location. What other information might be useful?
 
