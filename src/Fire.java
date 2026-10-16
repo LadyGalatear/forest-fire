@@ -59,6 +59,7 @@ public class Fire {
         Location start = new Location(matchR, matchC);
         Set<Location> visited = new HashSet<>();
         Queue<Location> queue = new ArrayDeque<>();
+        visited.add(start);
         queue.add(start);
 
         while (!queue.isEmpty()) {
