@@ -62,6 +62,7 @@ public class Fire {
         visited.add(start);
         queue.add(start);
 
+        burnTime = -1;
         while (!queue.isEmpty()) {
             int size = queue.size();
             burnTime++;
