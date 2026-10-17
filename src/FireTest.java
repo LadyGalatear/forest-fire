@@ -49,36 +49,36 @@ public class FireTest {
     }
 
     @Test
-public void testMatchOnEmptySpace() {
-    char[][] forest = {{'.', 't'}};
+    public void testMatchOnEmptySpace() {
+        char[][] forest = {{'.', 't'}};
 
-    assertEquals(0, Fire.timeToBurn(forest, 0, 0));
-}
+        assertEquals(0, Fire.timeToBurn(forest, 0, 0));
+    }
 
-@Test
-public void testSquareOfTrees() {
-    char[][] forest = {
-        {'t', 't'},
-        {'t', 't'}
-    };
+    @Test
+    public void testSquareOfTrees() {
+        char[][] forest = {
+            {'t', 't'},
+            {'t', 't'}
+        };
 
-    assertEquals(2, Fire.timeToBurn(forest, 0, 0));
-}
+        assertEquals(2, Fire.timeToBurn(forest, 0, 0));
+    }
 
-@Test
-public void testDiagonalTrees() {
-    char[][] forest = {
-        {'t', '.'},
-        {'.', 't'}
-    };
+    @Test
+    public void testDiagonalTrees() {
+        char[][] forest = {
+            {'t', '.'},
+            {'.', 't'}
+        };
 
-    assertEquals(0, Fire.timeToBurn(forest, 0, 0));
-}
+        assertEquals(0, Fire.timeToBurn(forest, 0, 0));
+    }
 
-@Test
-public void testStartInMiddle() {
-    char[][] forest = {{'t', 't', 't', 't', 't'}};
+    @Test
+    public void testStartInMiddle() {
+        char[][] forest = {{'t', 't', 't', 't', 't'}};
 
-    assertEquals(2, Fire.timeToBurn(forest, 0, 2));
-}
-}
+        assertEquals(2, Fire.timeToBurn(forest, 0, 2));
+    }
+    }

@@ -1,7 +1,0 @@
-{
-    "code-runner.ignoreSelection": true,
-    "code-runner.runInTerminal": true,
-    "code-runner.executorMap": {
-        "java": "cd \"$workspaceRoot\" && javac -cp \"lib/*\" -d bin src/*.java && java -jar lib/junit-platform-console-standalone-6.0.3.jar execute --class-path bin --scan-class-path"
-    }
-}
